@@ -1,16 +1,37 @@
-# wcag
+# 🧩 Accessible Flutter Demo
 
-A new Flutter project.
+A small Flutter project created to demonstrate applied understanding of **digital accessibility** and **WCAG 2.1 compliance** principles.
+---
 
-## Getting Started
+## 🎯 Objectives
 
-This project is a starting point for a Flutter application.
+This demo intentionally includes features that make it accessible to users with different needs.
 
-A few resources to get you started if this is your first Flutter project:
+Specifically, the app demonstrates:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- ✅ **Screen reader support** using Flutter’s `Semantics` widget  
+- ✅ **Accessible color contrast** (meets WCAG 2.1 AA standard)  
+- ✅ **Dynamic text scaling** (supports large accessibility fonts)  
+- ✅ **Keyboard and focus navigation** using `FocusTraversalGroup`  
+- ✅ **Clear, descriptive labels and hints** for interactive elements  
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## 🧩 Accessibility Features Breakdown
+
+### 1. Screen Reader (VoiceOver / TalkBack)
+
+All major UI elements are wrapped in `Semantics` widgets.  
+Each element has **meaningful labels** and **hints** for assistive technologies.
+
+```dart
+Semantics(
+  button: true,
+  label: 'Submit information button',
+  hint: 'Double tap to submit your name',
+  child: ElevatedButton.icon(
+    icon: const Icon(Icons.send),
+    onPressed: () {},
+    label: const Text('Submit'),
+  ),
+);
